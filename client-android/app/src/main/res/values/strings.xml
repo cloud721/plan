@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SimpleApp</string>
+    <string name="action_open_webview">Open WebView</string>
+
+    <string name="close">Close</string>
+    <string name="subscription_header">Subscription header</string>
+    <string name="yearly">Annual plan</string>
+    <string name="weekly">Weekly plan</string>
+    <string name="yearly_price">US$39.99/year</string>
+    <string name="yearly_weekly">Just US$0.77/week</string>
+    <string name="weekly_price">US$7.99/week</string>
+    <string name="save_77">Save 77%</string>
+    <string name="save_more_by">Save more with annual billing</string>
+    <string name="try_for_free">Try for Free</string>
+    <string name="terms">Terms</string>
+    <string name="privacy">Privacy</string>
+
+    <string name="training_plan_title">Your healthy training plan is ready</string>
+    <string name="training_plan_subtitle">Gold members receive a free lesson every week</string>
+    <string name="day_1">Day 1</string>
+    <string name="day_1_title">Trusting God When Life Falls Apart</string>
+    <string name="day_3">Day 3</string>
+    <string name="day_3_title">Hear God Clearly Today!</string>
+    <string name="day_7">Day 7</string>
+    <string name="day_7_title">Keep Listening and Growing</string>
+
+    <string name="spiritual_courses">Spiritual courses</string>
+    <string name="five_star_praise">Five-star praise</string>
+    <string name="review_title">Love the daily guidance! Always on point.</string>
+    <string name="review_rating">5.0/5.0</string>
+    <string name="review_content">Love the personalized guidance for daily devotion!</string>
+    <string name="reviewer_name">James H.</string>
+</resources>

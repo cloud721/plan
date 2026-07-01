@@ -1,0 +1,1 @@
+window.dramaDatabase = window.dramaDatabase || [];
