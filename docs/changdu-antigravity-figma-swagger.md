@@ -1,13 +1,5 @@
 # google Antigravity + figma + swagger协同
 
-Source page: https://docs.changdu.vip/pages/viewpage.action?pageId=158725193
-
-- Space: 研发中心 (`SPC1`)
-- Page ID: `158725193`
-- Version: `5`
-- Last updated: `2026-04-15T17:32:22.970+08:00`
-- Author shown by Confluence: 戴云飞
-
 ## Overview
 
 协同 UI 设计及服务端接口完成开发，使用 Antigravity（Gemini 3.1 Pro）。
