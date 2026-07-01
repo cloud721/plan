@@ -1,1 +1,182 @@
+# android ai code工具分析
 
+> 来源：[https://docs.changdu.vip/pages/viewpage.action?pageId=158696638](https://docs.changdu.vip/pages/viewpage.action?pageId=158696638)
+> 更新时间：2026-03-27T14:03:51.490+08:00
+> 更新人：戴云飞
+
+初步结论： android客户端开发 codex及Antigravity好用，有条件可以一个工作， 完成后另一个git diff做代码review, 增加可靠性。
+
+
+# 一.案例尝试暂时以下4种：
+
+
+需求：C5短剧， 增加横屏剧全屏观看
+
+
+##### 1.codex（gpt-5.4）
+
+
+贴图UI效果实现横屏剧观看：
+
+
+![image2026-3-19_18-7-14.png](test.assets/image2026-3-19_18-7-14.png)
+
+
+逐步生成功能code，完成后， as环境编译运行起来无问题，功能实现完整，效果如图：
+
+
+![2.jpg](test.assets/2.jpg)
+
+
+figma UI效果尝试，使用上一步Copy link的url， 让codex 获取(也可figma bearer令牌获取有权限内容
+
+![image2026-3-19_18-11-43.png](test.assets/image2026-3-19_18-11-43.png)
+
+)
+
+
+![image2026-3-19_18-12-54.png](test.assets/image2026-3-19_18-12-54.png)
+
+
+figma使用不太熟悉测试UI规范较少， 持续提示词修改效果跑起来后效果，细节UI及其他功能还需细调，后续验证。
+
+
+![1.jpg](test.assets/1.jpg)
+
+
+整体codex挺好用。
+
+
+对比其他ai工具：
+
+
+##### 2.as 插件 copilot(gpt-4.1)
+
+
+生成该功能效果较差， 基本不能用(as中无法编译打包启动)， 适合问答及代码补全
+
+
+##### 3.claude code（gpt-5.4）
+
+
+耗费几十分钟完成，中间断了一次，
+
+![image2026-3-20_14-33-36.png](test.assets/image2026-3-20_14-33-36.png)
+
+完成后as上编译也是一次通过，跑起来大致正常， UI细节待调：
+
+
+![image2026-3-20_14-35-43.png](test.assets/image2026-3-20_14-35-43.png)
+
+
+##### 4.google Antigravity(Genimi 3.1 Pro)
+
+
+理论上来说最适合android 开发，操作界面与codex很类似，可多工程多开
+
+![image2026-3-20_15-15-6.png](test.assets/image2026-3-20_15-15-6.png)
+
+
+速度较快， 编译运行生成效果也不错：
+
+
+![image2026-3-20_15-42-46.png](test.assets/image2026-3-20_15-42-46.png)
+
+
+# 二. codex安装使用：
+
+
+1.Node.js（版本22或更高）安装后， 安装codex： npm install -g @openai/codex， 验证成功：
+
+
+![image2026-3-19_17-49-29.png](test.assets/image2026-3-19_17-49-29.png)
+
+
+codex 配置文件位于 <用户目录>/.codex目录下编辑config.toml文件，大模型就选最新的gpt-5.4，添加或修改：
+
+
+model_provider = "ylscode"
+
+
+model = "gpt-5.4"
+model_reasoning_effort = "high"
+
+
+network_access = "enabled"
+disable_response_storage = true
+
+
+approval_policy = "untrusted"
+sandbox_mode    = "read-only"
+personality = "pragmatic"
+
+
+env_key = "OPENAI_API_KEY"
+
+
+[model_providers.ylscode]
+name = "ylscode"
+base_url = "[https://code.ylsagi.com/codex](https://code.ylsagi.com/codex)"
+wire_api = "responses"
+requires_openai_auth = true
+
+
+[windows]
+sandbox = "elevated"
+
+
+[projects.'C:\Users\daiyunfei']
+trust_level = "trusted"
+
+
+[projects.'\\?\G:\test']
+trust_level = "trusted"
+
+
+[features]
+multi_agent = true
+
+
+[mcp_servers.figma]
+url = "[https://mcp.figma.com/mcp](https://mcp.figma.com/mcp)"
+
+
+2.下载安装window版本codex
+
+
+下载地址：[https://openai.com/zh-Hans-CN/codex/](https://openai.com/zh-Hans-CN/codex/)
+
+
+启动后输入key登录后选择指定工程目录：
+
+
+![image2026-3-19_17-54-27.png](test.assets/image2026-3-19_17-54-27.png)
+
+
+针对安卓开发，可下载android的skills：
+
+![image2026-3-19_17-55-28.png](test.assets/image2026-3-19_17-55-28.png)
+
+
+# 三.figma安装使用
+
+
+下载window版 figma
+
+
+登录后有UI稿，Copy example prompt复制url
+
+![image2026-3-26_18-49-25.png](test.assets/image2026-3-26_18-49-25.png)
+
+
+用于codex， 能按图层生成对应界面。原先UI源稿图层很多，生成效果
+
+![image2026-3-27_14-2-42.png](test.assets/image2026-3-27_14-2-42.png)
+
+
+figma上统一整理后，ai重新生成
+
+![image2026-3-27_14-3-36.png](test.assets/image2026-3-27_14-3-36.png)
+
+
+基本上能用
