@@ -1,9 +1,5 @@
 # android ai code工具分析
 
-> 来源：[https://docs.changdu.vip/pages/viewpage.action?pageId=158696638](https://docs.changdu.vip/pages/viewpage.action?pageId=158696638)
-> 更新时间：2026-03-27T14:03:51.490+08:00
-> 更新人：戴云飞
-
 初步结论： android客户端开发 codex及Antigravity好用，有条件可以一个工作， 完成后另一个git diff做代码review, 增加可靠性。
 
 
